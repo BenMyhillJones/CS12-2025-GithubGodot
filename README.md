@@ -1,22 +1,3 @@
-<<<<<<< Updated upstream
-Breakfast
-
-Food
-
-
-
-Lunch 
-
-Food
-
-
-
-Dinner
-
-Food
-
-=======
-not fixed idiot
 # Breakfast
 waffles
 fench tost
@@ -35,4 +16,4 @@ spaghetty-os
 mashed potato
 mtn dew voltage
 1996 toyota corolla
->>>>>>> Stashed changes
+
