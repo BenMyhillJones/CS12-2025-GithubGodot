@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm8n3itvmnttf"]
+[gd_scene load_steps=8 format=3 uid="uid://cm8n3itvmnttf"]
 
-[ext_resource type="Texture2D" uid="uid://cm1tdooxe3xks" path="res://icon.svg" id="1_tna1i"]
+[ext_resource type="Texture2D" uid="uid://0v4dbffiqo4k" path="res://Graphics/wonder-ag.jpg" id="1_ypfbe"]
 [ext_resource type="Script" uid="uid://ixs56sk3ykak" path="res://player.gd" id="2_3lm67"]
+[ext_resource type="Texture2D" uid="uid://g468054ftmqd" path="res://Graphics/pngtree-wicker-basketball-clipart-illustration-isolated-on-black-background-png-image_16882503.png" id="3_ypfbe"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3lm67"]
 
@@ -11,22 +12,23 @@ size = Vector2(20, 677)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tna1i"]
 size = Vector2(127.83693, 135.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypfbe"]
-size = Vector2(126, 127)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e7f0w"]
+radius = 55.0
+height = 118.0
 
 [node name="Node2D" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_3lm67")
 
+[node name="Floor" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(571, 1111)
+scale = Vector2(1.167, 1)
+texture = ExtResource("1_ypfbe")
+
 [node name="Wall2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1164, 322)
 shape = SubResource("RectangleShape2D_3lm67")
-
-[node name="Floor" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(577.5, 678)
-scale = Vector2(9.0546875, 1)
-texture = ExtResource("1_tna1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(579, 678)
@@ -38,12 +40,14 @@ position = Vector2(-13, 336)
 shape = SubResource("RectangleShape2D_3lm67")
 
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(85, 224)
 script = ExtResource("2_3lm67")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(386, 325)
-texture = ExtResource("1_tna1i")
+[node name="PngtreeWickerBasketballClipartIllustrationIsolatedOnBlackBackgroundPngImage16882503" type="Sprite2D" parent="Player"]
+position = Vector2(384.99997, 325)
+scale = Vector2(0.0528, 0.0528)
+texture = ExtResource("3_ypfbe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(386, 325)
-shape = SubResource("RectangleShape2D_ypfbe")
+shape = SubResource("CapsuleShape2D_e7f0w")
