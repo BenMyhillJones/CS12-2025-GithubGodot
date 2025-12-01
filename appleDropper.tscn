@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cm8n3itvmnttf"]
+[gd_scene load_steps=9 format=3 uid="uid://cm8n3itvmnttf"]
 
 [ext_resource type="Texture2D" uid="uid://0v4dbffiqo4k" path="res://Graphics/wonder-ag.jpg" id="1_ypfbe"]
 [ext_resource type="Script" uid="uid://ixs56sk3ykak" path="res://player.gd" id="2_3lm67"]
 [ext_resource type="Texture2D" uid="uid://g468054ftmqd" path="res://Graphics/pngtree-wicker-basketball-clipart-illustration-isolated-on-black-background-png-image_16882503.png" id="3_ypfbe"]
+[ext_resource type="Texture2D" uid="uid://bju8auw62n3n5" path="res://Graphics/pexels-freestockpro-1227513.jpg" id="4_e7f0w"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3lm67"]
 
@@ -51,3 +52,9 @@ texture = ExtResource("3_ypfbe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(386, 325)
 shape = SubResource("CapsuleShape2D_e7f0w")
+
+[node name="PexelsFreestockpro1227513" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(578.00006, 377)
+scale = Vector2(0.27842507, 0.2784251)
+texture = ExtResource("4_e7f0w")
