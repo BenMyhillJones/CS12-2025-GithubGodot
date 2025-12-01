@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed := 600.0
+@export var speed := 750.0
 @export var acceleration := 3000.0
-@export var friction := 800.0  # lower friction = more slippery
+@export var friction := 650.0  # lower friction = more slippery
 
 
 
