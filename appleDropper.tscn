@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cm8n3itvmnttf"]
+[gd_scene load_steps=11 format=3 uid="uid://cm8n3itvmnttf"]
 
 [ext_resource type="Texture2D" uid="uid://0v4dbffiqo4k" path="res://Graphics/wonder-ag.jpg" id="1_ypfbe"]
 [ext_resource type="Script" uid="uid://ixs56sk3ykak" path="res://player.gd" id="2_3lm67"]
 [ext_resource type="Texture2D" uid="uid://g468054ftmqd" path="res://Graphics/pngtree-wicker-basketball-clipart-illustration-isolated-on-black-background-png-image_16882503.png" id="3_ypfbe"]
 [ext_resource type="Texture2D" uid="uid://bju8auw62n3n5" path="res://Graphics/pexels-freestockpro-1227513.jpg" id="4_e7f0w"]
+[ext_resource type="Script" uid="uid://kktofwxink2v" path="res://apple_spawner.gd" id="5_exqao"]
+[ext_resource type="PackedScene" uid="uid://ctqib7n1p8jvu" path="res://Apple.tscn" id="6_8dpwq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3lm67"]
 
@@ -14,7 +16,7 @@ size = Vector2(20, 677)
 size = Vector2(127.83693, 135.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e7f0w"]
-radius = 55.0
+radius = 54.0
 height = 118.0
 
 [node name="Node2D" type="Node2D"]
@@ -40,16 +42,16 @@ shape = SubResource("RectangleShape2D_tna1i")
 position = Vector2(-13, 336)
 shape = SubResource("RectangleShape2D_3lm67")
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Basket" type="CharacterBody2D" parent="."]
 position = Vector2(85, 224)
 script = ExtResource("2_3lm67")
 
-[node name="PngtreeWickerBasketballClipartIllustrationIsolatedOnBlackBackgroundPngImage16882503" type="Sprite2D" parent="Player"]
+[node name="PngtreeWickerBasketballClipartIllustrationIsolatedOnBlackBackgroundPngImage16882503" type="Sprite2D" parent="Basket"]
 position = Vector2(384.99997, 325)
 scale = Vector2(0.0528, 0.0528)
 texture = ExtResource("3_ypfbe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
 position = Vector2(386, 325)
 shape = SubResource("CapsuleShape2D_e7f0w")
 
@@ -58,3 +60,7 @@ z_index = -1
 position = Vector2(578.00006, 377)
 scale = Vector2(0.27842507, 0.2784251)
 texture = ExtResource("4_e7f0w")
+
+[node name="AppleSpawner" type="Node2D" parent="."]
+script = ExtResource("5_exqao")
+apple_scene = ExtResource("6_8dpwq")
