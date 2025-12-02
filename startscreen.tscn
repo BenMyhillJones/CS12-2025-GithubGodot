@@ -11,7 +11,7 @@ script = ExtResource("1_nrfbx")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 645.0
-color = Color(0.82528156, 0.39032716, 0.2844305, 1)
+color = Color(0.6062975, 0.5309601, 0.34981942, 1)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 237.0
@@ -32,12 +32,12 @@ theme_override_fonts/font = ExtResource("1_8hh42")
 theme_override_font_sizes/font_size = 40
 text = "START"
 
-[node name="AppleboyRemovebgPreview" type="Sprite2D" parent="."]
+[node name="apple #1" type="Sprite2D" parent="."]
 position = Vector2(240, 412.5)
 scale = Vector2(0.948, 0.954)
 texture = ExtResource("3_1yvcn")
 
-[node name="OutputRemovebgPreview" type="Sprite2D" parent="."]
+[node name="apple #2" type="Sprite2D" parent="."]
 position = Vector2(941, 423)
 texture = ExtResource("4_x6rvy")
 
