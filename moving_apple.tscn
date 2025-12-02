@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtv7ef0caeord"]
+
+[ext_resource type="Script" uid="uid://cesgr1ng0knxs" path="res://moving_apple.gd" id="1_tn6w8"]
+[ext_resource type="Texture2D" uid="uid://bte1d3s62l45v" path="res://images-removebg-preview.png" id="1_wgp3l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tn6w8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wgp3l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5xa6"]
+radius = 112.0714
+
+[node name="mving apple" type="CharacterBody2D"]
+script = ExtResource("1_tn6w8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+sprite_frames = SubResource("SpriteFrames_tn6w8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 0)
+shape = SubResource("CircleShape2D_g5xa6")
