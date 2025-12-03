@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://ixs56sk3ykak" path="res://player.gd" id="2_3lm67"]
 [ext_resource type="Texture2D" uid="uid://g468054ftmqd" path="res://Graphics/pngtree-wicker-basketball-clipart-illustration-isolated-on-black-background-png-image_16882503.png" id="3_ypfbe"]
 [ext_resource type="Texture2D" uid="uid://bju8auw62n3n5" path="res://Graphics/pexels-freestockpro-1227513.jpg" id="4_e7f0w"]
-[ext_resource type="Script" uid="uid://bwdxxhrees55c" path="res://insideme.gd" id="5_8dpwq"]
+[ext_resource type="Script" path="res://insideme.gd" id="5_8dpwq"]
 [ext_resource type="Texture2D" uid="uid://dqs7gi2itd34p" path="res://Graphics/pngtree-3d-red-apple-png-with-green-leaf-png-image_10201408.png" id="6_c8rcf"]
-[ext_resource type="Script" path="res://apple_spawner.gd" id="7_c8rcf"]
+[ext_resource type="Script" uid="uid://kktofwxink2v" path="res://apple_spawner.gd" id="7_c8rcf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3lm67"]
 
@@ -109,8 +109,6 @@ text = "lives: 3"
 
 [node name="AppleSpawner" type="Node2D" parent="."]
 script = ExtResource("7_c8rcf")
-script = ExtResource("5_exqao")
-apple_scene = ExtResource("6_8dpwq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
