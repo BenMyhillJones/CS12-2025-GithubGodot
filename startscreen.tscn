@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cndqyhbjpfkke"]
+[gd_scene load_steps=8 format=3 uid="uid://cndqyhbjpfkke"]
 
 [ext_resource type="FontFile" uid="uid://mru4jci7qg4g" path="res://BrainzoopersonaluseBold-p7mLO.otf" id="1_8hh42"]
 [ext_resource type="Script" uid="uid://31uqlye21nyc" path="res://startscreen.gd" id="1_nrfbx"]
+[ext_resource type="FontFile" uid="uid://c2qijyi621vb2" path="res://JellyjampersonaluseBold-Rpjev.otf" id="2_8xq5q"]
 [ext_resource type="Texture2D" uid="uid://cvstdn23ivunp" path="res://appleboy-removebg-preview.png" id="3_1yvcn"]
 [ext_resource type="Texture2D" uid="uid://c5dhjdsnt0lvt" path="res://output-removebg-preview.png" id="4_x6rvy"]
 [ext_resource type="PackedScene" uid="uid://dtv7ef0caeord" path="res://moving_apple.tscn" id="6_8xq5q"]
@@ -20,7 +21,7 @@ offset_left = 237.0
 offset_top = 133.0
 offset_right = 870.0
 offset_bottom = 234.0
-theme_override_fonts/font = ExtResource("1_8hh42")
+theme_override_fonts/font = ExtResource("2_8xq5q")
 theme_override_font_sizes/font_size = 80
 text = "THE APPLE GAME"
 horizontal_alignment = 1
