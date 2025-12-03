@@ -41,7 +41,9 @@ shape = SubResource("RectangleShape2D_3lm67")
 position = Vector2(579, 678)
 scale = Vector2(9.0546875, 1)
 
-[node name="GroundCollision" type="CollisionShape2D" parent="StaticBody2D/Ground2"]
+[node name="GroundCollision" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(579, 678)
+scale = Vector2(9.0546875, 1)
 shape = SubResource("RectangleShape2D_tna1i")
 
 [node name="Basket" type="CharacterBody2D" parent="."]
