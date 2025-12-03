@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0550ul8a1k"]
+
+[ext_resource type="Script" uid="uid://cnxpckgducfsc" path="res://game_over_mmbwop.gd" id="1_akvto"]
+[ext_resource type="Texture2D" uid="uid://bodghagk1odlb" path="res://Graphics/Game Boy Advance - Breath of Fire 2 - Miscellaneous - Fire Background.png" id="2_w17xa"]
+[ext_resource type="Texture2D" uid="uid://b1a5dcnn56wu" path="res://Graphics/pngtree-skull-with-fire-png-image_14605030.png" id="3_tyect"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5viv"]
+atlas = ExtResource("2_w17xa")
+region = Rect2(0, 0, 241, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlkw0"]
+atlas = ExtResource("2_w17xa")
+region = Rect2(242, 0, 241, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2q7w"]
+atlas = ExtResource("2_w17xa")
+region = Rect2(484, 0, 241, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs570"]
+atlas = ExtResource("2_w17xa")
+region = Rect2(726, 0, 241, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qk04"]
+atlas = ExtResource("2_w17xa")
+region = Rect2(968, 0, 241, 107)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujxal"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5viv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlkw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2q7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs570")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qk04")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="game over mmbwop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_akvto")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(578.5, 321.5)
+scale = Vector2(4.875519, 6.214954)
+sprite_frames = SubResource("SpriteFrames_ujxal")
+frame_progress = 0.9599465
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 190.0
+offset_right = 900.0
+offset_bottom = 365.0
+theme_override_font_sizes/font_size = 128
+text = "YOU LOSE"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(173, 466)
+texture = ExtResource("3_tyect")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(826, 11)
+texture = ExtResource("3_tyect")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 474.0
+offset_right = 760.0
+offset_bottom = 584.0
+theme_override_font_sizes/font_size = 48
+text = "try again :("
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
