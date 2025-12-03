@@ -33,14 +33,16 @@ texture = ExtResource("1_ypfbe")
 position = Vector2(1164, 322)
 shape = SubResource("RectangleShape2D_3lm67")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(579, 678)
-scale = Vector2(9.0546875, 1)
-shape = SubResource("RectangleShape2D_tna1i")
-
 [node name="Walls" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-13, 336)
 shape = SubResource("RectangleShape2D_3lm67")
+
+[node name="Ground2" type="Area2D" parent="StaticBody2D"]
+position = Vector2(579, 678)
+scale = Vector2(9.0546875, 1)
+
+[node name="GroundCollision" type="CollisionShape2D" parent="StaticBody2D/Ground2"]
+shape = SubResource("RectangleShape2D_tna1i")
 
 [node name="Basket" type="CharacterBody2D" parent="."]
 position = Vector2(85, 224)
@@ -73,3 +75,5 @@ offset_top = 4.0
 offset_right = 105.0
 offset_bottom = 84.0
 text = "Score:"
+
+[connection signal="body_entered" from="StaticBody2D/Ground2" to="AppleSpawner" method="_on_ground_2_body_entered"]
