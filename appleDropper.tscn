@@ -64,3 +64,12 @@ texture = ExtResource("4_e7f0w")
 [node name="AppleSpawner" type="Node2D" parent="."]
 script = ExtResource("5_exqao")
 apple_scene = ExtResource("6_8dpwq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 105.0
+offset_bottom = 84.0
+text = "Score:"
