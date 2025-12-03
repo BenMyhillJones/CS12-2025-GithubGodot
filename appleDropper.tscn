@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cm8n3itvmnttf"]
+[gd_scene load_steps=13 format=3 uid="uid://cm8n3itvmnttf"]
 
 [ext_resource type="Texture2D" uid="uid://0v4dbffiqo4k" path="res://Graphics/wonder-ag.jpg" id="1_ypfbe"]
 [ext_resource type="Script" uid="uid://ixs56sk3ykak" path="res://player.gd" id="2_3lm67"]
 [ext_resource type="Texture2D" uid="uid://g468054ftmqd" path="res://Graphics/pngtree-wicker-basketball-clipart-illustration-isolated-on-black-background-png-image_16882503.png" id="3_ypfbe"]
 [ext_resource type="Texture2D" uid="uid://bju8auw62n3n5" path="res://Graphics/pexels-freestockpro-1227513.jpg" id="4_e7f0w"]
+[ext_resource type="Script" uid="uid://bwdxxhrees55c" path="res://insideme.gd" id="5_8dpwq"]
+[ext_resource type="Texture2D" uid="uid://dqs7gi2itd34p" path="res://Graphics/pngtree-3d-red-apple-png-with-green-leaf-png-image_10201408.png" id="6_c8rcf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3lm67"]
 
@@ -17,13 +19,19 @@ size = Vector2(127.83693, 135.5)
 radius = 55.0
 height = 118.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdrxu"]
+size = Vector2(101, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knasv"]
+radius = 27.073973
+
 [node name="Node2D" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_3lm67")
 
 [node name="Floor" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(571, 1111)
+position = Vector2(580, 1095)
 scale = Vector2(1.167, 1)
 texture = ExtResource("1_ypfbe")
 
@@ -41,7 +49,7 @@ position = Vector2(-13, 336)
 shape = SubResource("RectangleShape2D_3lm67")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(85, 224)
+position = Vector2(87, 216)
 script = ExtResource("2_3lm67")
 
 [node name="PngtreeWickerBasketballClipartIllustrationIsolatedOnBlackBackgroundPngImage16882503" type="Sprite2D" parent="Player"]
@@ -53,8 +61,46 @@ texture = ExtResource("3_ypfbe")
 position = Vector2(386, 325)
 shape = SubResource("CapsuleShape2D_e7f0w")
 
+[node name="Area2D" type="Area2D" parent="Player"]
+position = Vector2(-1, -2)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(386, 335)
+shape = SubResource("RectangleShape2D_rdrxu")
+
 [node name="PexelsFreestockpro1227513" type="Sprite2D" parent="."]
+editor_description = "THIS STUPID BACKGROUND KEEPS GETTING IN MY WAY"
 z_index = -1
-position = Vector2(578.00006, 377)
+position = Vector2(581, 376.99997)
 scale = Vector2(0.27842507, 0.2784251)
 texture = ExtResource("4_e7f0w")
+
+[node name="stupid apple" type="CharacterBody2D" parent="."]
+position = Vector2(543, 239)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("5_8dpwq")
+
+[node name="Sprite2D" type="Sprite2D" parent="stupid apple"]
+position = Vector2(3.9999697, -6.999999)
+scale = Vector2(0.26319438, 0.27291667)
+texture = ExtResource("6_c8rcf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stupid apple"]
+shape = SubResource("CircleShape2D_knasv")
+
+[node name="scorelabel" type="Label" parent="."]
+offset_right = 371.0
+offset_bottom = 138.0
+theme_override_font_sizes/font_size = 48
+
+[node name="lives" type="Label" parent="."]
+offset_top = 523.0
+offset_right = 164.0
+offset_bottom = 590.0
+theme_override_font_sizes/font_size = 48
+text = "lives: 3"
+
+[connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Player/Area2D" to="stupid apple" method="_on_area_2d_body_entered"]
