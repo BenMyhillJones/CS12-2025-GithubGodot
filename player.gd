@@ -6,12 +6,13 @@ extends CharacterBody2D
 @export var bounce_factor := 0.9      # 1.0 = perfect bounce, <1.0 loses speed
 @export var jump_force := -1200.0     # negative for upward jump
 @export var gravity := 10000.0
-
+var score_label
+var score = 0
 @export var max_jumps := 2
 var jumps_left := 0
 
 func _ready():
-	jumps_left = max_jumps
+	score_label = get_node("/root/Node2D/scorelabel")
 
 func _physics_process(delta):
 	# Apply gravity
@@ -41,3 +42,7 @@ func _physics_process(delta):
 	# Bounce off walls
 	if is_on_wall():
 		velocity.x = -previous_velocity.x * bounce_factor
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	score += 1
+	score_label.text = "score " + str(score)
