@@ -22,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	
 
 
+# this is where the stupid little apple respawns when it goes into the stupid little basket
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	position.y = 0
 	position.x = randi_range(10, 1100)

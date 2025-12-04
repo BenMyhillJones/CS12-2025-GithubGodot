@@ -43,6 +43,8 @@ func _physics_process(delta):
 	if is_on_wall():
 		velocity.x = -previous_velocity.x * bounce_factor
 
+
+# score thing 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	score += 1
 	score_label.text = "score " + str(score)

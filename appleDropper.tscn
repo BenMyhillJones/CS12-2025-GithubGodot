@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ixs56sk3ykak" path="res://player.gd" id="2_3lm67"]
 [ext_resource type="Texture2D" uid="uid://g468054ftmqd" path="res://Graphics/pngtree-wicker-basketball-clipart-illustration-isolated-on-black-background-png-image_16882503.png" id="3_ypfbe"]
 [ext_resource type="Texture2D" uid="uid://bju8auw62n3n5" path="res://Graphics/pexels-freestockpro-1227513.jpg" id="4_e7f0w"]
-[ext_resource type="Script" path="res://insideme.gd" id="5_8dpwq"]
+[ext_resource type="Script" uid="uid://bwdxxhrees55c" path="res://insideme.gd" id="5_8dpwq"]
 [ext_resource type="Texture2D" uid="uid://dqs7gi2itd34p" path="res://Graphics/pngtree-3d-red-apple-png-with-green-leaf-png-image_10201408.png" id="6_c8rcf"]
 [ext_resource type="Script" uid="uid://kktofwxink2v" path="res://apple_spawner.gd" id="7_c8rcf"]
 [ext_resource type="AudioStream" uid="uid://byrxoxmig16ee" path="res://Deranged_Epidemic-339900-mobiles24.mp3" id="8_rdrxu"]
@@ -67,12 +67,12 @@ texture = ExtResource("3_ypfbe")
 position = Vector2(386, 325)
 shape = SubResource("CapsuleShape2D_e7f0w")
 
-[node name="Player#Area2D" type="Area2D" parent="."]
-position = Vector2(-1, -2)
+[node name="Area2D" type="Area2D" parent="Basket"]
+position = Vector2(-86, -226)
 collision_mask = 4
 
-[node name="Player_Area2D#CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(386, 335)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket/Area2D"]
+position = Vector2(472, 551)
 shape = SubResource("RectangleShape2D_rdrxu")
 
 [node name="PexelsFreestockpro1227513" type="Sprite2D" parent="."]
@@ -125,3 +125,5 @@ stream = ExtResource("8_rdrxu")
 autoplay = true
 
 [connection signal="body_entered" from="StaticBody2D/Ground2" to="AppleSpawner" method="_on_ground_2_body_entered"]
+[connection signal="body_entered" from="Basket/Area2D" to="Basket" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Basket/Area2D" to="stupid apple" method="_on_area_2d_body_entered"]
