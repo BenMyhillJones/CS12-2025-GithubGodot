@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cm8n3itvmnttf"]
+[gd_scene load_steps=15 format=3 uid="uid://cm8n3itvmnttf"]
 
 [ext_resource type="Texture2D" uid="uid://0v4dbffiqo4k" path="res://Graphics/wonder-ag.jpg" id="1_ypfbe"]
 [ext_resource type="Script" uid="uid://ixs56sk3ykak" path="res://player.gd" id="2_3lm67"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://insideme.gd" id="5_8dpwq"]
 [ext_resource type="Texture2D" uid="uid://dqs7gi2itd34p" path="res://Graphics/pngtree-3d-red-apple-png-with-green-leaf-png-image_10201408.png" id="6_c8rcf"]
 [ext_resource type="Script" uid="uid://kktofwxink2v" path="res://apple_spawner.gd" id="7_c8rcf"]
+[ext_resource type="AudioStream" uid="uid://byrxoxmig16ee" path="res://Deranged_Epidemic-339900-mobiles24.mp3" id="8_rdrxu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3lm67"]
 
@@ -118,5 +119,9 @@ offset_top = 4.0
 offset_right = 105.0
 offset_bottom = 84.0
 text = "Score:"
+
+[node name="Peaceful background music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_rdrxu")
+autoplay = true
 
 [connection signal="body_entered" from="StaticBody2D/Ground2" to="AppleSpawner" method="_on_ground_2_body_entered"]
