@@ -8,11 +8,14 @@ extends CharacterBody2D
 @export var gravity := 10000.0
 var score_label
 var score = 0
+var hiscore_label
 @export var max_jumps := 2
 var jumps_left := 0
 
 func _ready():
 	score_label = get_node("/root/Node2D/scorelabel")
+	hiscore_label = get_node("/root/Node2D/HighScoreLabel")
+	hiscore_label.text = "hi score: " + str(Globals.hiscore)
 
 func _physics_process(delta):
 	# Apply gravity
@@ -42,7 +45,15 @@ func _physics_process(delta):
 	# Bounce off walls
 	if is_on_wall():
 		velocity.x = -previous_velocity.x * bounce_factor
-
+	
+	hiscore_label.text = "hi score: " + str(Globals.hiscore)
+	
+	if Globals.tries < 1:
+		if score > Globals.hiscore:
+			Globals.hiscore = score
+		else:
+			pass
+		get_tree().change_scene_to_file("res://game_over_mmbwop.tscn")
 
 # score thing 
 func _on_area_2d_body_entered(body: Node2D) -> void:

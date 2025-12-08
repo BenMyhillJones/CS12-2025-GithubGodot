@@ -113,14 +113,17 @@ text = "lives: 3"
 [node name="AppleSpawner" type="Node2D" parent="."]
 script = ExtResource("7_c8rcf")
 
+[node name="HighScoreLabel" type="Label" parent="."]
+offset_left = 491.0
+offset_right = 742.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 32
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
-offset_left = -319.0
-offset_top = -21.0
-offset_right = -68.0
-offset_bottom = 161.0
-text = "Score:"
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Peaceful background music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_rdrxu")
