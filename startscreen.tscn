@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cndqyhbjpfkke"]
+[gd_scene load_steps=9 format=3 uid="uid://cndqyhbjpfkke"]
 
 [ext_resource type="FontFile" uid="uid://mru4jci7qg4g" path="res://BrainzoopersonaluseBold-p7mLO.otf" id="1_8hh42"]
 [ext_resource type="Script" uid="uid://31uqlye21nyc" path="res://startscreen.gd" id="1_nrfbx"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c5dhjdsnt0lvt" path="res://output-removebg-preview.png" id="4_x6rvy"]
 [ext_resource type="PackedScene" uid="uid://dtv7ef0caeord" path="res://moving_apple.tscn" id="6_8xq5q"]
 [ext_resource type="PackedScene" uid="uid://hccylyh2yo7p" path="res://bumper.tscn" id="6_bprvm"]
+[ext_resource type="AudioStream" uid="uid://b56uhede2oyre" path="res://Pirate Song2.mp3" id="8_x1678"]
 
 [node name="startscreen" type="Node2D"]
 script = ExtResource("1_nrfbx")
@@ -53,5 +54,11 @@ position = Vector2(89, 48)
 
 [node name="bumper2" parent="." instance=ExtResource("6_bprvm")]
 position = Vector2(994, 48)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_x1678")
+volume_db = -20.293
+autoplay = true
+parameters/looping = true
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
